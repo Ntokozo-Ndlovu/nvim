@@ -18,16 +18,20 @@ use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
 use { "ellisonleao/gruvbox.nvim" }
 use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use ('nvim-treesitter/playground')
-use ('theprimeagen/harpoon')
+
 use ('mbbill/undotree')
 use ('tpope/vim-fugitive')
-
+use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+}
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v3.x',
   requires = {
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
+    {'mason-org/mason.nvim'},
+    {'mason-org/mason-lspconfig.nvim'},
     {'neovim/nvim-lspconfig'},
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-nvim-lsp'},
@@ -35,6 +39,9 @@ use {
   }
 }
 use {
-    "williamboman/mason.nvim"
+    "mason-org/mason.nvim"
 }
+
+
+use 'mfussenegger/nvim-jdtls'
 end)
